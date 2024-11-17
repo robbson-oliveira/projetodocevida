@@ -9,11 +9,23 @@
   <link rel="stylesheet" href="css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&family=Fredoka+One&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.css" />
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
 </head>
 
 <body>
+
+  <div class="container-mensagens" id="container-mensagens">
+
+  </div>
+
+  <a class="col-auto botao-carrinho hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
+      <div class="badge-total-carrinho">0</div>
+      <i class="bag ph ph-basket"></i>
+  </a>
+
+ 
   <section class="header">
     <img src="img/bg-shape-hero.png" alt="Imagem de Fundo com vários produtos da Doceria Doce Vida"
       class="bg-shape-hero" />
@@ -45,9 +57,11 @@
               <a href="#contato" class="nav-link">Contato</a>
             </li>
           </ul>
-          <a class="btn btn-white btn-icon">
-            <i class="ph ph-basket"></i>
-            Meu Carrinho
+          <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
+            Meu Carrinho <span class="icon">
+              <div class="container-total-carrinho badge-total-carrinho hidden">0</div>
+              <i class="ph ph-basket"></i>
+            </span>            
           </a>
         </div>
       </nav>
@@ -116,27 +130,27 @@
 
         <div class="col-12 container-menu">
           <div class="row">
-            <a class="btn btn-cardapio btn-sm mr-3 active">
+            <a id="menu-cakes" class="btn btn-cardapio btn-sm mr-3 active" onclick="cardapio.metodos.obterItensCardapio('cakes')">
               <img src="img/botões/Cakes.png" alt="Botão com imagem de Cakes dentro">
               <h5>Cakes</h5>
             </a>
 
-            <a class="btn btn-cardapio btn-sm mr-3">
+            <a id="menu-cupcakes" class="btn btn-cardapio btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('cupcakes')">
               <img src="img/botões/Cupcakes.png" alt="Botão com imagem de Cupcakes dentro">
               <h5>Cupcakes</h5>
             </a>
 
-            <a class="btn btn-cardapio btn-sm mr-3">
+            <a id="menu-donuts" class="btn btn-cardapio btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('donuts')">
               <img src="img/botões/Donuts.png" alt="Botão com imagem de Donuts dentro">
               <h5>Donuts</h5>
             </a>
 
-            <a class="btn btn-cardapio btn-sm mr-3">
+            <a id="menu-cookies" class="btn btn-cardapio btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('cookies')">
               <img src="img/botões/Cokkies.png" alt="Botão com imagem de Cookies dentro">
               <h5>Cookies</h5>
             </a>
 
-            <a class="btn btn-cardapio btn-sm mr-3">
+            <a id="menu-macarons" class="btn btn-cardapio btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('macarons')">
               <img src="img/botões/macarons.png" alt="Botão com imagem de Macarons dentro">
               <h5>Macarons</h5>
             </a>
@@ -146,85 +160,11 @@
         <div class="col-12 bloco-cards">
           <div class="row" id="itensCardapio">
 
-            <!-- Coluna 1* -->
-            <div class="col-3">
-              <div class="card card-item">
-                <div class="img-produto">
-                  <img src="img/Produtos/image.png" alt="">
-                </div>
-                <h5 class="title-produto text-center mt-4">
-                  Nome do Produto muito grande maior
-                </h5>
-                <p class="price-produto text-center"> R$ Preço</p>
-                <div class="add-carrinho">
-                  <span class="btn-menos"><i class="ph ph-minus"></i></span>
-                  <span class="add-numero-itens">0</span>
-                  <span class="btn-mais"><i class="ph ph-plus"></i></span>
-                  <span class="btn btn-add"><i class="ph ph-shopping-cart"></i></span>
-                </div>
-              </div>
-            </div> <!-- Fechando a coluna 1 corretamente -->
 
-            <!-- Coluna 2 -->
-            <div class="col-3">
-              <div class="card card-item">
-                <div class="img-produto">
-                  <img src="img/Produtos/image.png" alt="">
-                </div>
-                <h5 class="title-produto text-center mt-4">
-                  Nome do Produto muito grande maior
-                </h5>
-                <p class="price-produto text-center"> R$ Preço</p>
-                <div class="add-carrinho">
-                  <span class="btn-menos"><i class="ph ph-minus"></i></span>
-                  <span class="add-numero-itens">0</span>
-                  <span class="btn-mais"><i class="ph ph-plus"></i></span>
-                  <span class="btn btn-add"><i class="ph ph-shopping-cart"></i></span>
-                </div>
-              </div>
-            </div> <!-- Fechando a coluna 2 corretamente -->
-
-            <!-- Coluna 3 -->
-            <div class="col-3">
-              <div class="card card-item">
-                <div class="img-produto">
-                  <img src="img/Produtos/image.png" alt="">
-                </div>
-                <h5 class="title-produto text-center mt-4">
-                  Nome do Produto muito grande maior
-                </h5>
-                <p class="price-produto text-center"> R$ Preço</p>
-                <div class="add-carrinho">
-                  <span class="btn-menos"><i class="ph ph-minus"></i></span>
-                  <span class="add-numero-itens">0</span>
-                  <span class="btn-mais"><i class="ph ph-plus"></i></span>
-                  <span class="btn btn-add"><i class="ph ph-shopping-cart"></i></span>
-                </div>
-              </div>
-            </div> <!-- Fechando a coluna 3 corretamente -->
-
-            <!-- Coluna 4 -->
-            <div class="col-3">
-              <div class="card card-item">
-                <div class="img-produto">
-                  <img src="img/Produtos/image.png" alt="">
-                </div>
-                <h5 class="title-produto text-center mt-4">
-                  Nome do Produto muito grande maior
-                </h5>
-                <p class="price-produto text-center"> R$ Preço</p>
-                <div class="add-carrinho">
-                  <span class="btn-menos"><i class="ph ph-minus"></i></span>
-                  <span class="add-numero-itens">0</span>
-                  <span class="btn-mais"><i class="ph ph-plus"></i></span>
-                  <span class="btn btn-add"><i class="ph ph-shopping-cart"></i></span>
-                </div>
-              </div>
-            </div> <!-- Fechando a coluna 4 corretamente -->
 
           </div> <!-- Fechando a row corretamente -->
 
-          <div class="col-12 text-center mt-5 mb-5">
+          <div id="btnVerMais" class="col-12 text-center mt-5 mb-5" onclick="cardapio.metodos.verMais()">
             <a class="btn btn-line body-text-2 btn-sm btn-custom-hover">
               Visualizar mais Produtos
             </a>
@@ -328,11 +268,11 @@
     </div>
   </footer>
 
-  <div class="modal-full" id="modalCarrinho">
+  <div class="modal-full hidden" id="modalCarrinho">
 
     <div class="m-header">
       <div class="container">
-        <a class="btn btn-white btn-sm float-right">
+        <a class="btn btn-white btn-sm float-right" onclick="cardapio.metodos.abrirCarrinho(false)">
           Fechar
         </a>
 
@@ -350,34 +290,15 @@
     <div class="m-body">
       <div class="container">
 
-        <div id="itensCarrinho" class="row mr-0 ml-0 hidden">
-
-          <div class="col-12 item-carrinho">
-            <div class="img-produto">
-              <img src="img/imagemproduto.png" />
-            </div>
-            <div class="dados-produtos">
-              <p class="title-produto"><b>Nome do Produto</b></p>
-              <p class="price-produto"><b>R$ 149,90</b></p>
-            </div>
-            <div class="add-carrinho">
-              <span class="btn-menos"><i class="ph ph-minus"></i></span>
-              <span class="add-numero-itens">0</span>
-              <span class="btn-mais"><i class="ph ph-plus"></i></span>
-              <span class="btn btn-remove"><i class="ph ph-x-circle"></i></span>
-            </div>
-          </div>
-
-
-        </div>
+        <div id="itensCarrinho" class="row mr-0 ml-0 hidden"></div>
 
         <div id="localdaEntrega" class="row mr-0 ml-0 hidden">
 
           <div class="col-4">
             <div class="form-group container-cep">
               <label>CEP:</label>
-              <input id="textCEP" type="text" class="form-control" />
-              <a class="btn btn-form btn-sm"><i class="ph ph-magnifying-glass"></i></a>
+              <input id="txtCEP" type="text" class="form-control" />
+              <a class="btn btn-form btn-sm" onclick="cardapio.metodos.buscarCEP()"><i class="ph ph-magnifying-glass"></i></a>
             </div>
           </div>
 
@@ -386,7 +307,7 @@
           <div class="col-6">
             <div class="form-group">
               <label>Endereço:</label>
-              <input id="txtEndereço" type="text" class="form-control" />
+              <input id="txtEndereco" type="text" class="form-control" />
             </div>
           </div>
 
@@ -422,7 +343,7 @@
           <div class="col-2">
             <div class="form-group">
               <label>UF:</label>
-              <select id="ddlF" class="form-control">
+              <select id="ddlUF" class="form-control">
                 <option valeu="-1">...</option>
                 <option value="AC">AC</option>
                 <option value="AL">AL</option>
@@ -458,7 +379,7 @@
 
         </div>
 
-        <div id="resumoCarrinho" class="row mr-0 ml-0">
+        <div id="resumoCarrinho" class="row mr-0 ml-0 hidden">
             <div class="col-12">
               <p class="title-carrinho mt-4">
                 <b>Itens do pedido</b>
@@ -467,24 +388,6 @@
 
           <div class="col-12">
             <div class="row" id="listaItensResumo">
-
-              <div class="col-12 item-carrinho resumo">
-                  <div class="img-produto-resumo">
-                    <img src="./img/imagemproduto.png" />
-                  </div>
-                  <div class="dados-produto">
-                      <p class="title-produto-resumo">
-                        <b>Nome do Produto</b>
-                      </p>
-                      <p class="price-produto-resumo">
-                        <b>R$ 100,00</b>
-                      </p>
-                  </div>
-
-                  <p class="quantidade-produto-resumo">
-                    x <b>3</b>
-                  </p>
-              </div>
 
             </div>
 
@@ -502,10 +405,10 @@
                 </div>
                 <div class="dados-produto">
                     <p class="texto-endereco">
-                        <b id="resumoEndereco">Rua Test, 200, bairro teste</b>
+                        <b id="resumoEndereco"></b>
                     </p>
                     <p class="cidade-endereco" id="cidadeEndereco">
-                        Cidade-SP / 14711-00
+
                     </p>
                 </div>
           </div>
@@ -522,31 +425,31 @@
         <div class="container-total text-right mb-4">
           <p class="mb-0">
             <span>Subtotal: </span>
-            <span id="lblSubTotal">R$ 95,00</span>
+            <span id="lblSubTotal">R$ 0,00</span>
           </p>
           <p class="mb-0 texto-entrega">
             <span><i class="ph-bold ph-moped"> </i>Entrega:</span>
-            <span id="lblValorEntrega">+ R$ 5,00</span>
+            <span id="lblValorEntrega">+ R$ 0,00</span>
           </p>
           <p class="mb-0 texto-total">
             <span><b>Total: </b></span>
-            <span class="valor-total" id="lblValorTotal"><b>R$ 100,00</b></span>
+            <span class="valor-total"><b id="lblValorTotal">R$ 0,00</b></span>
           </p>
         </div>
 
-        <a class="btn btn-pink body-text-2 float-right" id="btnEtapaPedido">
+        <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-pink body-text-2 float-right" id="btnEtapaPedido">
           Continuar
         </a>
 
-        <a class="btn btn-pink body-text-2 float-right hidden" id="btnEtapaEndereco">
+        <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-pink body-text-2 float-right hidden" id="btnEtapaEndereco">
           Revisar Pedido
         </a>
 
-        <a class="btn btn-pink body-text-2 float-right hidden" id="btnEtapaResumo">
+        <a href="" class="btn btn-pink body-text-2 float-right hidden" id="btnEtapaResumo" target="_blank">
           Enviar Pedido
         </a>
 
-        <a class="btn btn-line body-text-2 float-right mr-3 hidden" id="btnVoltar">
+        <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-line body-text-2 float-right mr-3 hidden" id="btnVoltar">
           Voltar
         </a>
 
@@ -562,6 +465,9 @@
   <script type="text/javascript" src="js/modernizr-3.5.0.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/dados.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
 </body>
 
 </html>

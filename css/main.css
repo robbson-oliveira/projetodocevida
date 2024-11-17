@@ -6,7 +6,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none!important;
 }
 
 /* Cabeçalhos */
@@ -894,7 +894,110 @@ select.form-control {
 }
 
 
-/* Modal Carrinho Ocultada para efeito da entrega */
-.modal-full {
-   display: none;
+.badge-total-carrinho {
+    width: 25px;
+    height: 25px;
+    position: absolute!important;
+    background-color: #FFD3D7;
+    border-radius: 50px;
+    right: -5px;
+    top: -5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-black-50)!important;
+    z-index: 1;
+}
+
+.botao-carrinho {
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  height: 50px;
+  width: 50px;
+  background-color: var(--color-pink-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  box-shadow: 0px 4px 14px 0px rgba(174, 19, 57, 0.34);
+  color: var(--color-black-100)!important;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.bag.ph.ph-basket {
+  color: var(--color-white);
+}
+
+.btn.btn-white.btn-icon .ph-basket {
+  position: relative;
+  top: 1px;
+}
+
+.container-total-carrinho.badge-total-carrinho {
+  width: 16px;
+  height: 16px;
+  position: absolute!important;
+  background-color: #FFD3D7;
+  border-radius: 50px;
+  right: 16px!important;
+  top: 33px!important;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-black-50)!important;
+}
+
+
+
+.container-mensagens {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 9999;
+
+}
+
+.toast {
+    color: var(--color-white);
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+}
+
+.toast.red {
+    background-color: #F28B82;
+    color: var(--color-white);
+}
+
+.toast.green {
+    background-color: #63C9A6;
+    color: var(--color-white);
+}
+
+.carrinho-vazio {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 600;
+    color: var(--color-black-50);
+}
+
+.carrinho-vazio i {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-pink-100);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50px;
+    margin-bottom: 12px;
 }
