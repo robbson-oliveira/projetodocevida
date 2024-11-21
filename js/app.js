@@ -60,7 +60,7 @@ cardapio.metodos = {
       $("#menu-" + categoria).addClass('active')
   },
 
-  //clique no botão de ver mais 
+  //Clique no botão de ver mais 
   verMais: () => {
     
     var ativo = $(".container-menu a.active").attr('id').split('menu-')[1]; //menu-cakes
